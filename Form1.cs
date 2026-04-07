@@ -1,7 +1,12 @@
+using System.Data;
+using Microsoft.Data.SqlClient;
+
 namespace Lks_diy_2026_11;
 
 public partial class Form1 : Form
-{
+{   
+    DbConn db = new DbConn();
+
     TextBox tbEmail = new TextBox{Anchor = AnchorStyles.Left | AnchorStyles.Right, BorderStyle = BorderStyle.FixedSingle};
     TextBox tbPassword = new TextBox{Anchor = AnchorStyles.Left | AnchorStyles.Right, BorderStyle = BorderStyle.FixedSingle};
 
@@ -10,8 +15,10 @@ public partial class Form1 : Form
     
     public Form1()
     {
+        btnLogin.Click += btnLogin_CLick;
+        
         this.Size = new Size(1000, 700);
-        this.Text = "DIT sMART";
+        this.Text = "DIY sMART";
 
         var formLogin = new TableLayoutPanel{Dock = DockStyle.Fill, ColumnCount = 2, RowCount = 3, Padding = new Padding(16),
             RowStyles = {
@@ -71,4 +78,58 @@ public partial class Form1 : Form
 
         this.Controls.Add(root);
     }
+
+    private void btnLogin_CLick(object? sender, EventArgs e)
+    {
+        if(string.IsNullOrWhiteSpace(tbEmail.Text) && string.IsNullOrWhiteSpace(tbPassword.Text))
+        {
+            MessageBox.Show("email atau password yang anda masukkan tidak sesuai !");
+        } else if( string.IsNullOrWhiteSpace(tbEmail.Text))
+        {
+            MessageBox.Show("email atau password yang anda masukkan tidak sesuai !");
+        } else if(string.IsNullOrWhiteSpace(tbPassword.Text))
+        {
+            MessageBox.Show("email atau password yang anda masukkan tidak sesuai !");            
+        }else
+        {
+
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@email", tbEmail.Text),
+                new SqlParameter("@password", tbPassword.Text),
+            };
+
+            DataTable dt = db.Query(@"
+                select * from users where email = @email and password = @password
+            ", parameters);
+
+            if(dt.Rows.Count == 1)
+            {
+                int id = Convert.ToInt32(dt.Rows[0]["id"]);
+
+                SqlParameter[] param =
+                {
+                    new SqlParameter("@aktivitas", "login"),
+                    new SqlParameter("@id_user", id)
+                };
+
+                int result = db.Execute(@"
+                    insert into tbl_log(aktvitas, id_user) values(@aktivitas, @id_user)
+                ", param);
+
+                if(result == 1)
+                {
+                    MessageBox.Show("Log In berhasil");
+                this.Hide();
+                Form frmAdmin = new FormAdmin();
+                frmAdmin.Show();
+                }
+                
+            } else
+            {
+                MessageBox.Show("Password dan Email salah");
+            }
+        }
+    }
+
 }
