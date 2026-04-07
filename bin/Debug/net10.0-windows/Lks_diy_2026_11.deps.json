@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Lks_diy_2026_11/1.0.0": {
+        "runtime": {
+          "Lks_diy_2026_11.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lks_diy_2026_11/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

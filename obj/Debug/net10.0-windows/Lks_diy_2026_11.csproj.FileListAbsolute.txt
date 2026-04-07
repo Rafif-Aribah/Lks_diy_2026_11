@@ -1,0 +1,14 @@
+D:\Codes\C#\Lks_diy_2026_11\bin\Debug\net10.0-windows\Lks_diy_2026_11.exe
+D:\Codes\C#\Lks_diy_2026_11\bin\Debug\net10.0-windows\Lks_diy_2026_11.deps.json
+D:\Codes\C#\Lks_diy_2026_11\bin\Debug\net10.0-windows\Lks_diy_2026_11.runtimeconfig.json
+D:\Codes\C#\Lks_diy_2026_11\bin\Debug\net10.0-windows\Lks_diy_2026_11.dll
+D:\Codes\C#\Lks_diy_2026_11\bin\Debug\net10.0-windows\Lks_diy_2026_11.pdb
+D:\Codes\C#\Lks_diy_2026_11\obj\Debug\net10.0-windows\Lks_diy_2026_11.GeneratedMSBuildEditorConfig.editorconfig
+D:\Codes\C#\Lks_diy_2026_11\obj\Debug\net10.0-windows\Lks_diy_2026_11.AssemblyInfoInputs.cache
+D:\Codes\C#\Lks_diy_2026_11\obj\Debug\net10.0-windows\Lks_diy_2026_11.AssemblyInfo.cs
+D:\Codes\C#\Lks_diy_2026_11\obj\Debug\net10.0-windows\Lks_diy_2026_11.csproj.CoreCompileInputs.cache
+D:\Codes\C#\Lks_diy_2026_11\obj\Debug\net10.0-windows\Lks_diy_2026_11.dll
+D:\Codes\C#\Lks_diy_2026_11\obj\Debug\net10.0-windows\refint\Lks_diy_2026_11.dll
+D:\Codes\C#\Lks_diy_2026_11\obj\Debug\net10.0-windows\Lks_diy_2026_11.pdb
+D:\Codes\C#\Lks_diy_2026_11\obj\Debug\net10.0-windows\Lks_diy_2026_11.genruntimeconfig.cache
+D:\Codes\C#\Lks_diy_2026_11\obj\Debug\net10.0-windows\ref\Lks_diy_2026_11.dll
