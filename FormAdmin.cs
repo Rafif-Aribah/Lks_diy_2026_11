@@ -5,6 +5,9 @@ public class FormAdmin: Form
 {
     DbConn db = new DbConn();
 
+    TableLayoutPanel root;
+    Panel panelIsi;
+
     Button btnKelolaUser = new Button{Anchor = AnchorStyles.None, Height = 40, Width = 100, Text = "Kelola user", Dock = DockStyle.Fill,};
     Button btnKelolaLaporan = new Button{Anchor = AnchorStyles.None, Height = 40, Width = 100, Text = "Kelola Laporan", Dock = DockStyle.Fill,};
     Button btnLogActivity = new Button{Anchor = AnchorStyles.None, Height = 40, Width = 100, Text = "Log Activity", Dock = DockStyle.Fill,};
@@ -19,6 +22,7 @@ public class FormAdmin: Form
     public FormAdmin()
     {
         btnFilter.Click += btnFilter_Click;
+        btnKelolaUser.Click += btnKelolaUser_Click;
 
         this.Size = new Size(1000, 700);
 
@@ -69,6 +73,8 @@ public class FormAdmin: Form
         rootLogActivity.SetColumnSpan(rootLogActivity.Controls[1], 4);
         rootLogActivity.SetColumnSpan(dgvActivity, 4);
 
+        panelIsi = new Panel{Dock = DockStyle.Fill, Controls = {rootLogActivity}};
+
         var rootSideBar = new TableLayoutPanel{Dock = DockStyle.Fill, RowCount = 3, ColumnCount = 1, ColumnStyles = {new ColumnStyle(SizeType.Percent, 100)},
             RowStyles = {new RowStyle(SizeType.Percent, 50), new RowStyle(SizeType.Percent, 30), new RowStyle(SizeType.Percent, 20)},
             Controls =
@@ -92,7 +98,7 @@ public class FormAdmin: Form
             }
         };
 
-        var root = new TableLayoutPanel{Dock = DockStyle.Fill, RowCount = 1, ColumnCount = 2, RowStyles = {new RowStyle(SizeType.Percent, 100)},
+        root = new TableLayoutPanel{Dock = DockStyle.Fill, RowCount = 1, ColumnCount = 2, RowStyles = {new RowStyle(SizeType.Percent, 100)},
         ColumnStyles =
             {
                 new ColumnStyle(SizeType.Percent, 35),
@@ -100,7 +106,7 @@ public class FormAdmin: Form
             },
         Controls =
             {
-                rootSideBar, rootLogActivity
+                rootSideBar, panelIsi
             }
         };
 
@@ -137,5 +143,17 @@ public class FormAdmin: Form
 
             dgvActivity.DataSource = dt;
         }
+    }
+
+    private void btnKelolaUser_Click(object? sender, EventArgs e)
+    {
+        loadCtrl(new CtrlKelolaUser());
+    }
+
+    private void loadCtrl(UserControl ctrl)
+    {
+        panelIsi.Controls.Clear();
+        ctrl.Dock = DockStyle.Fill;
+        panelIsi.Controls.Add(ctrl);
     }
 }

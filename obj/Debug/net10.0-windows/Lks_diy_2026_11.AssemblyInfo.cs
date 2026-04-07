@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lks_diy_2026_11")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+689ecfff9d6b1b0f400aefea69c08a9ff649ca11")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87dab15a6b4cf94978211dae6c417bfe23bd34cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lks_diy_2026_11")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lks_diy_2026_11")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
